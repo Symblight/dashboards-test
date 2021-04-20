@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown";
-
 export default function CardTableUsers({ color, data = [] }) {
   return (
     <>
@@ -24,7 +22,7 @@ export default function CardTableUsers({ color, data = [] }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Card Tables
+                Card Users
               </h3>
             </div>
           </div>
