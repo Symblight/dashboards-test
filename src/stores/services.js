@@ -20,10 +20,17 @@ export const removeUser = createAsyncThunk(
 );
 
 export const dropSession = createAsyncThunk("auth/dropAuth", async (params) =>  await auth.logoutRequest(params));
+
 export const onLogin = createAsyncThunk("auth/setAuth", async (params) => {
   return await auth.loginRequest(params);
 });
 
 export const onRegistered = createAsyncThunk("auth/setAuth", async (params) => {
   return await auth.registerRequest(params);
+});
+
+export const onResetPassword = createAsyncThunk("auth/resetPassword", async (params) => {
+
+  console.log(111111, 'resetPasswordRequest')
+  return await auth.resetPasswordRequest(params);
 });

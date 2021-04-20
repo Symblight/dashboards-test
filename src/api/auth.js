@@ -54,13 +54,13 @@ export const forgotPasswordRequest = async ({ data, token }) => {
   );
 };
 
-export const resetPasswordRequest = async ({ data, params, token }) => {
+export const resetPasswordRequest = async ({ data }) => {
   const { password } = data;
   return await Request(
     {
       method: "POST",
       url: "/auth/reset-password",
-      params: { token: params.token },
+      params: { token: localStorage.getItem("token") },
       data: { password },
     },
     localStorage.getItem("refreshToken")

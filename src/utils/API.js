@@ -13,7 +13,7 @@ const createAuthorization = (
 export async function Request(request, token) {
   const params = request.params ? qs.stringify(request.params) : ""
   const formattedUrl =
-    API_URL + request.url + params;
+    API_URL + request.url + '?' + params;
 
   const headers = {
     Accept: "application/json",
