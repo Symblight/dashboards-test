@@ -24,18 +24,22 @@ const setAuthPayload = (state, action) => {
   localStorage.setItem('refreshToken', tokens.refresh.token)
 }
 
+const dropPayload = (state, action) => {
+  state.authenticated = false;
+  state.token = null;
+  state.refreshToken = null
+  localStorage.removeItem('token')
+  localStorage.removeItem('refreshToken')
+}
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: {
     [onLogin.fulfilled]: setAuthPayload,
     [onRegistered.fulfilled]: setAuthPayload,
-    [dropSession.rejected]: (state, action) => {
-      localStorage.removeItem('token')
-      localStorage.removeItem('refreshToken')
-      state.authenticated = false;
-      state.token = null;
-    }
+    [dropSession.fulfilled]: dropPayload,
+    [dropSession.rejected]: dropPayload
   },
 });
 

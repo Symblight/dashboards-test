@@ -19,9 +19,7 @@ export const removeUser = createAsyncThunk(
   users.removeUserByIdRequest
 );
 
-export const dropSession = createAsyncThunk("auth/dropAuth", async (params) => {
-  await auth.logoutRequest(params);
-});
+export const dropSession = createAsyncThunk("auth/dropAuth", async (params) =>  await auth.logoutRequest(params));
 export const onLogin = createAsyncThunk("auth/setAuth", async (params) => {
   return await auth.loginRequest(params);
 });

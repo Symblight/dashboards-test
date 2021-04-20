@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { margin } from "tailwindcss/defaultTheme";
 import NotificationDropdown from "components/Dropdowns/NotificationDropdown";
 import UserDropdown from "components/Dropdowns/UserDropdown";
 import { paths } from "pages/paths";
